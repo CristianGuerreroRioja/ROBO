@@ -1,0 +1,358 @@
+/*Algunos términos:
+    width - ancho
+    height - alto (altura)
+    padding - relleno
+    border - borde
+*/
+
+
+/*El selector universal (*) selecciona todos los elementos HTML en la página.*/
+
+* {
+    /*https://www.w3schools.com/css/css3_box-sizing.asp
+  CSS Box Sizing
+  Por defecto, el width y el height de un elemento se calcula 
+    sumando width + padding + border = width total
+    sumando height + padding + border = height total
+  La propiedad box-sizing nos permite incluir el relleno
+  y el borde en el ancho y alto total de un elemento.
+
+  Nos será útil para el diseño en columnas de la página web.
+  */
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+
+/*Quitamos el margin que viene por defecto en la etiqueta body*/
+
+body {
+    margin: 0;
+}
+
+
+/* Estilo del <div> del logo */
+
+.logo {
+    background-color: #0B5345;
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+}
+
+
+/* Estilo del encabezado */
+
+.header {
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/*Estilo del título <h1> del encabezado 
+  ¿Cómo seleccionamos únicamente el h1 de dentro del header?
+  En la hoja de CSS ponemos:
+  .header h1{ ...estilos... }
+  Con esto indicamos lo siguiente:
+  A todo aquel elemento que tenga la clase header y tenga un 
+  descendiente <h1> asignale los siguientes estilos.
+*/
+
+.header h1 {
+    font-size: 80px;
+}
+
+
+/*Estilo del párrafo <p> del encabezado 
+  Igual que antes: A todo aquel elemento que tenga la clase header y 
+  tenga un descendiente <p> asignale los siguientes estilos. */
+
+.header p {
+    padding: 0 20%;
+}
+
+
+/*Estilos del menú de navegación
+  https://www.w3schools.com/css/css_overflow.asp
+  CSS Overflow
+  La propiedad overflow especifica si se debe recortar el contenido o agregar barras de desplazamiento cuando el contenido de un elemento es demasiado grande para caber en el área especificada.
+*/
+
+.topnav {
+    overflow: hidden;
+    border-bottom: 2px solid #D35400;
+}
+
+
+/* Style the topnav links */
+
+.topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+
+/* Change color on hover */
+
+.topnav a:hover {
+    background-color: #D35400;
+    color: white;
+}
+
+.topnav a.active {
+    background-color: #D35400;
+    color: white;
+}
+
+
+/*https://www.w3schools.com/css/css_website_layout.asp
+  Diseño en columnas del sitio web.
+
+*/
+
+
+/* Create three unequal columns that floats next to each other */
+
+.column {
+    float: left;
+    padding: 15px;
+}
+
+.textpage {
+    margin: auto;
+    width: 80%;
+}
+
+
+/*right column */
+
+.column.side {
+    width: 33.3%;
+}
+
+
+/* right column - parrafs*/
+
+.column.side p {
+    padding: 20px;
+    background-color: #117A65;
+    color: white;
+}
+
+
+/* left column */
+
+.column.middle {
+    width: 66.6%;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/*Gallery*/
+
+.gallery {
+    padding: 20px;
+    float: left;
+    width: 33%;
+}
+
+.gallery img,
+.inlineImg img {
+    width: 100%;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+div.gallery:hover {
+    background-color: #D35400;
+    color: white;
+}
+
+
+/* menú de navegación fijo*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4CAF50;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+
+/*alineación*/
+
+.inlineImg {
+    padding: 20px;
+    float: left;
+    width: 33.3%;
+}
+
+.clear {
+    clear: both;
+}
+
+p {
+    font-size: 17px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+
+/* columnas */
+
+.column-2 {
+    width: 50%;
+    float: left;
+}
+
+
+/* botones */
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px #4CAF50;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: solid 1px #4CAF50;
+}
+
+
+/* reglas auxiliares */
+
+.height-100 {
+    height: 100vh;
+}
+
+.padding-top {
+    padding-top: 70px;
+}
+
+.padding-top-less {
+    padding-top: 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    float: right;
+}
+
+#portada {
+    background-image: url(../img/bookshop.jpeg);
+    background-size: cover;
+}
+
+.padding-lat {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#mensaje {
+    margin: 3% 0;
+    width: 80%;
+    color: red;
+}
+
+#login {
+    background-color: #4caf4f5a;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .column.side,
+    .column.middle {
+        width: 100%;
+    }
+    .topnav a {
+        float: none;
+    }
+    .gallery {
+        float: none;
+        margin: auto;
+        width: 80%;
+    }
+    .header {
+        padding: 5px;
+    }
+    .header p {
+        padding: 0 5%;
+    }
+    .column-2 {
+        width: 100%;
+    }
+    #portada {
+        display: none;
+    }
+    #filter {
+        padding-top: 20px;
+    }
+    #login input {
+        margin: 3% 10%;
+        width: 80%;
+    }
+    #mensaje {
+        margin: 3% 10%;
+        width: 80%;
+    }
+    .padding-lat {
+        padding-left: 0.5%;
+        padding-right: 0.5%;
+    }
+}
